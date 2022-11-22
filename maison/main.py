@@ -49,6 +49,7 @@ def setup():
     maison.salon.sur_mouvement(mouvement_salon)
     maison.chambre.sur_mouvement(mouvement_chambre)
     maison.sonnette_entre.sur_clic(sonner_sonnette)
+
     # maison.cuisine.sur_mouvement(mouvement_cuisine)
 
 
@@ -60,10 +61,9 @@ def loop():
     print("Temp : " + str(temperature))
     maison.lcd.afficher(
         "Humidite : " + str(humidite), 
-        "Temperature : " + str(temperature),
-        "",
-        "")
-    maison_iot.update_doc({ "/document/temperature": temperature, "/document/humidite": humidite })
+        "Temperature : " + str(temperature)
+    )
+    maison_iot.update_doc(maison.as_doc())
 
     if maison.salle_de_bain.capteur_dht.humidite >= 50:
         maison.son.sonner()
