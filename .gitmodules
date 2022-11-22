@@ -1,0 +1,3 @@
+[submodule "smarthouse"]
+	path = smarthouse
+	url = https://github.com/ALIVEcode/SmartHouse
