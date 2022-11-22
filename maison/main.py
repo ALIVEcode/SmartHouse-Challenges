@@ -53,19 +53,23 @@ def setup():
 
 
 def loop():
-    print("Hum : " + str(maison.salle_de_bain.capteur_dht.humidite))
-    print("Temp : " + str(maison.salle_de_bain.capteur_dht.temperature))
+    humidite = maison.salle_de_bain.capteur_dht.humidite
+    temperature = maison.salle_de_bain.capteur_dht.temperature
+
+    print("Hum : " + str(humidite))
+    print("Temp : " + str(temperature))
     maison.lcd.afficher(
-        "Humidite : " + str(maison.salle_de_bain.capteur_dht.humidite), 
-        "Temperature : " + str(maison.salle_de_bain.capteur_dht.temperature),
+        "Humidite : " + str(humidite), 
+        "Temperature : " + str(temperature),
         "",
         "")
+    maison_iot.update_doc({ "/document/temperature": temperature, "/document/humidite": humidite })
 
     if maison.salle_de_bain.capteur_dht.humidite >= 50:
         maison.son.sonner()
     else:
         maison.son.stop()
-    sleep(0.5)
+    sleep(1)
 
     
 def start_maison():
