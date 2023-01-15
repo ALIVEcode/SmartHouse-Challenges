@@ -1,0 +1,13 @@
+1. BASE PROGRAMMATION
+    1. Variables
+        1.  
+        2. Creer une liste contenant les noms de 
+    2. if statements
+        1.
+    3. Fonctions/methodes
+    4. Intro POO (demo avec structure maison)
+        1. Classes : piece
+        2. Heritage (chambre EST une piece) : Creer 2 objets de type Piece ayant au moins 1 parametre unique
+        3. Composition (maison A des pieces): 
+
+2. DEFIS ALIMATA
